@@ -24,7 +24,7 @@ After you're finished please remove all the comments and instructions!
 
 <div align="center">
 
-  <h3><b>Math Magicians README Template</b></h3>
+  <h3><b>Bookstore</b></h3>
 
 </div>
 
@@ -56,13 +56,13 @@ After you're finished please remove all the comments and instructions!
 
 # 📖 [Math Magicians] <a name="about-project"></a>
 
-**[Math Magicians]** is a web-app where you can perform basic calculations and can read quote about maths.
+**[Bookstore]** is a web-app where you can add, delete and see your favourite books.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> Math Magicians is a web-app where you can perform basic calculations and can read quote about maths.
+> Bookstore is a web-app where you can add, delete and see your favourite books.
 
 <details>
   <summary>Client</summary>
@@ -91,9 +91,9 @@ After you're finished please remove all the comments and instructions!
 
 > You can.
 
-- **[perform basic calculations]**
-- **[you can read math related quotes]**
-- **[It fetches data from API]**
+- **[Add a book]**
+- **[Delete a book]**
+- **[See your books]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -112,6 +112,7 @@ In order to run this project you need:</br>
 ### Setup
 
 Clone this repository to your desired folder: </br>
+`git clone https://github.com/Gabriel-Leao/bookstore.git`
 then `cd "foldername"`</br>
 
 ### Install
@@ -154,9 +155,9 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[perform basic calculations]**
-- [ ] **[you can read math related quotes]**
-- [ ] **[It fetches data from API]**
+- [ ] **[Add a book]**
+- [ ] **[Delete a book]**
+- [ ] **[See your books]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -166,7 +167,7 @@ You can deploy this project using:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/DilsherB/math-magician/issues).
+Feel free to check the [issues page](https://github.com/DilsherB/bookstore/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

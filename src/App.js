@@ -1,11 +1,13 @@
-import "./App.css";
+import Books from "./components/Books";
+import Categories from "./components/Categories";
+import Menu from "./components/Menu";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>This is a React app.</p>
-      </header>
+      <Menu />
+      <Books />
+      <Categories />
     </div>
   );
 }

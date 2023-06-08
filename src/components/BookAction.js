@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const BookAction = () => {
   return (
     <div>
-        <h1>Book Action</h1>
+      <h1>Book Action</h1>
     </div>
-  )
-}
+  );
+};
 
-export default BookAction
+export default BookAction;

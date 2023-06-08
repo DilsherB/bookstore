@@ -1,16 +1,16 @@
-import React from 'react'
-import BookDetail from './BookDetail'
-import BookAction from './BookAction'
-import BookProgress from './BookProgress'
+import React from "react";
+import BookDetail from "./BookDetail";
+import BookAction from "./BookAction";
+import BookProgress from "./BookProgress";
 
 const Books = () => {
   return (
     <div>
-        <BookDetail />
-        <BookAction />
-        <BookProgress />
+      <BookDetail />
+      <BookAction />
+      <BookProgress />
     </div>
-  )
-}
+  );
+};
 
-export default Books
+export default Books;

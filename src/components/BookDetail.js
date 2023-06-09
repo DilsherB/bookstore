@@ -1,4 +1,6 @@
 import React from "react";
+import BookAction from "./BookAction";
+import BookProgress from "./BookProgress";
 
 const BookDetail = () => {
   const booksDB = [
@@ -25,11 +27,19 @@ const BookDetail = () => {
     <div>
       {booksDB.map((book) => {
         return (
-          <div key={book.id}>
-            <h4>{book.type}</h4>
-            <h1>{book.bookName}</h1>
-            <p>{book.author}</p>
-          </div>
+          <>
+            <div className="d-flex">
+              <div key={book.id}>
+                <p className="fw-bold text-secondary lh-1">{book.type}</p>
+                <p className="fw-bold fs-4 lh-1">{book.bookName}</p>
+                <p className="text-primary lh-1">{book.author}</p>
+                <BookAction />
+              </div>
+              <div>
+                <BookProgress />
+              </div>
+            </div>
+          </>
         );
       })}
     </div>

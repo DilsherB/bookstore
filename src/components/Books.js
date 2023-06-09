@@ -1,14 +1,10 @@
 import React from "react";
 import BookDetail from "./BookDetail";
-import BookAction from "./BookAction";
-import BookProgress from "./BookProgress";
 
 const Books = () => {
   return (
-    <div>
+    <div className="bg-white p-3">
       <BookDetail />
-      <BookAction />
-      <BookProgress />
     </div>
   );
 };

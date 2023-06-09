@@ -32,7 +32,7 @@ const BookDetail = () => {
               <div key={book.id} className="my-3">
                 <p className="fw-bold text-secondary lh-1">{book.type}</p>
                 <p className="fw-bold fs-4 lh-1">{book.bookName}</p>
-                <p className="text-primary lh-1">{book.author}</p>
+                <p className="text-primary lh-1 fw-light">{book.author}</p>
                 <BookAction />
               </div>
               <div>

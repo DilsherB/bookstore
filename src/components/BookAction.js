@@ -7,7 +7,7 @@ const BookAction = () => {
       {actionBtns.map((btn) => {
         return (
           <div key={btn}>
-            <p className="text-primary" style={{ cursor: "pointer" }}>
+            <p className="text-primary fw-light" style={{ cursor: "pointer" }}>
               {btn}
               <div className="vr mx-3" />
             </p>

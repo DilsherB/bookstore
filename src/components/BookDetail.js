@@ -28,8 +28,8 @@ const BookDetail = () => {
       {booksDB.map((book) => {
         return (
           <>
-            <div className="d-flex">
-              <div key={book.id}>
+            <div className="d-flex bg-white p-3 my-3 border rounded justify-content-between">
+              <div key={book.id} className="my-3">
                 <p className="fw-bold text-secondary lh-1">{book.type}</p>
                 <p className="fw-bold fs-4 lh-1">{book.bookName}</p>
                 <p className="text-primary lh-1">{book.author}</p>

@@ -3,7 +3,7 @@ import BookDetail from "./BookDetail";
 
 const Books = () => {
   return (
-    <div className="bg-white p-3">
+    <div>
       <BookDetail />
     </div>
   );

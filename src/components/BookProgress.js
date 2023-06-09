@@ -6,8 +6,11 @@ const BookProgress = () => {
       <div className="d-flex h-100 align-items-center gap-3">
         <div className="border border-3 p-5 rounded-circle" />
         <div>
-          <p>64%</p>
-          <p>Complete</p>
+          <p>
+            64%
+            <br />
+            Complete
+          </p>
         </div>
       </div>
       <div className="vr" />

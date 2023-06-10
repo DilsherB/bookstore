@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CompletionCircle from "./CompletionCircle";
 
 const BookDetail = () => {
   const booksDB = [
@@ -10,7 +11,7 @@ const BookDetail = () => {
       CommentsBtn: "Comments",
       RemoveBtn: "Remove",
       EditBtn: "Edit",
-      Percentage: "64%",
+      Percentage: "64",
       Complete: "Complete",
       CurrentChapter: "CURRENT CHAPTER",
       Chapter: "Chapter 17",
@@ -24,7 +25,7 @@ const BookDetail = () => {
       CommentsBtn: "Comments",
       RemoveBtn: "Remove",
       EditBtn: "Edit",
-      Percentage: "8%",
+      Percentage: "8",
       Complete: "Complete",
       CurrentChapter: "CURRENT CHAPTER",
       Chapter: 'Chapter 3: "A Lesson Learned"',
@@ -38,7 +39,7 @@ const BookDetail = () => {
       CommentsBtn: "Comments",
       RemoveBtn: "Remove",
       EditBtn: "Edit",
-      Percentage: "0%",
+      Percentage: "0",
       Complete: "Complete",
       CurrentChapter: "CURRENT CHAPTER",
       Chapter: "Introduction",
@@ -56,8 +57,11 @@ const BookDetail = () => {
       {books.map((book) => {
         return (
           <>
-            <div className="d-flex bg-white p-3 my-3 border rounded justify-content-between">
-              <div key={book.id} className="my-3 w-50">
+            <div
+              key={book.id}
+              className="d-flex bg-white p-3 my-3 border rounded justify-content-between"
+            >
+              <div className="my-3 w-50">
                 <p className="fw-bold text-secondary lh-1">{book.type}</p>
                 <p className="fw-bold fs-4 lh-1">{book.bookName}</p>
                 <p className="text-primary lh-1 fw-light">{book.author}</p>
@@ -87,11 +91,13 @@ const BookDetail = () => {
               </div>
               <div className="w-50">
                 <div className="d-flex gap-5 h-100 align-items-center">
-                  <div className="d-flex h-100 align-items-center gap-3">
-                    <div className="border border-3 p-5 rounded-circle" />
+                  <div className="d-flex h-100 align-items-center gap-5">
+                    <div style={{ width: "75px" }}>
+                      <CompletionCircle completePer={book.Percentage} />
+                    </div>
                     <div>
                       <p>
-                        {book.Percentage}
+                        {book.Percentage}%
                         <br />
                         {book.Complete}
                       </p>

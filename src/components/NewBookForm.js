@@ -22,7 +22,7 @@ const NewBookForm = () => {
               </select>
             </option>
           </div>
-          <div className="form-group col-2 col-sm-3 flex-row-3">
+          <div className="form-group col-2 col-sm-3">
             <p className="btn btn-primary form-control">ADD BOOK</p>
           </div>
         </div>

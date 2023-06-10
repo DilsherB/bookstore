@@ -9,7 +9,7 @@ const Navbar = () => {
     Categories: "CATEGORIES",
   };
   return (
-    <div className="bg-light w-100 px-3">
+    <div className="container bg-light w-100 px-3">
       <ul className="d-flex align-items-center">
         <h3 className="text-primary fw-bold" style={{ width: "25%" }}>
           Bookstore CMS

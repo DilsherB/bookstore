@@ -1,11 +1,19 @@
-import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Books from "./components/Books";
+import Categories from "./components/Categories";
+import Menu from "./components/Menu";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>This is a React app.</p>
-      </header>
+    <div className="bg-light">
+      <div className="container">
+        <Menu />
+        <Routes>
+          <Route path="/" element={<Books />} />
+          <Route path="/Books" element={<Books />} />
+          <Route path="/Categories" element={<Categories />} />
+        </Routes>
+      </div>
     </div>
   );
 }

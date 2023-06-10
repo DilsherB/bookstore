@@ -1,5 +1,5 @@
 import React from "react";
-import BookAction from "./BookAction";
+// import BookAction from "./BookAction";
 import BookProgress from "./BookProgress";
 
 const BookDetail = () => {
@@ -9,18 +9,27 @@ const BookDetail = () => {
       type: "Action",
       bookName: "The Hunger Games",
       author: "Suzanne Collins",
+      CommentsBtn: "Comments",
+      RemoveBtn: "Remove",
+      EditBtn: "Edit",
     },
     {
       id: 2,
       type: "Science Fiction",
       bookName: "Dune",
       author: "Frank Herbert",
+      CommentsBtn: "Comments",
+      RemoveBtn: "Remove",
+      EditBtn: "Edit",
     },
     {
       id: 3,
       type: "Economy",
       bookName: "Capital in the Twenty-First Century",
       author: "Suzanne Collins",
+      CommentsBtn: "Comments",
+      RemoveBtn: "Remove",
+      EditBtn: "Edit",
     },
   ];
   return (
@@ -33,7 +42,16 @@ const BookDetail = () => {
                 <p className="fw-bold text-secondary lh-1">{book.type}</p>
                 <p className="fw-bold fs-4 lh-1">{book.bookName}</p>
                 <p className="text-primary lh-1 fw-light">{book.author}</p>
-                <BookAction />
+                <p
+                  className="text-primary fw-light d-flex gap-3 pt-3"
+                  style={{ cursor: "pointer" }}
+                >
+                  <span>{book.CommentsBtn}</span>
+                  <div className="vr" />
+                  <span>{book.RemoveBtn}</span>
+                  <div className="vr" />
+                  <span>{book.EditBtn}</span>
+                </p>
               </div>
               <div>
                 <BookProgress />

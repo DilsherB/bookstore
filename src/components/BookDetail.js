@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-// import BookAction from "./BookAction";
-// import BookProgress from "./BookProgress";
 
 const BookDetail = () => {
   const booksDB = [

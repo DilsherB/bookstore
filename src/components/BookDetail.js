@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // import BookAction from "./BookAction";
 // import BookProgress from "./BookProgress";
 
@@ -47,9 +47,15 @@ const BookDetail = () => {
       UpdateProgress: "UPDATE PROGRESS",
     },
   ];
+  const [books, setBooks] = useState(booksDB);
+  const handleDeleteBook = (id) => {
+    setBooks((oldBooks) => {
+      return oldBooks.filter((theBook) => theBook.id !== id);
+    });
+  };
   return (
     <div>
-      {booksDB.map((book) => {
+      {books.map((book) => {
         return (
           <>
             <div className="d-flex bg-white p-3 my-3 border rounded justify-content-between">
@@ -57,15 +63,28 @@ const BookDetail = () => {
                 <p className="fw-bold text-secondary lh-1">{book.type}</p>
                 <p className="fw-bold fs-4 lh-1">{book.bookName}</p>
                 <p className="text-primary lh-1 fw-light">{book.author}</p>
-                <p
-                  className="text-primary fw-light d-flex gap-3 pt-3"
-                  style={{ cursor: "pointer" }}
-                >
-                  <span>{book.CommentsBtn}</span>
+                <p className="d-flex gap-3 pt-3">
+                  <button
+                    type="submit"
+                    className="btn btn-none text-primary fw-light"
+                  >
+                    {book.CommentsBtn}
+                  </button>
                   <div className="vr" />
-                  <span>{book.RemoveBtn}</span>
+                  <button
+                    type="submit"
+                    className="btn btn-none text-primary fw-light"
+                    onClick={() => handleDeleteBook(book.id)}
+                  >
+                    {book.RemoveBtn}
+                  </button>
                   <div className="vr" />
-                  <span>{book.EditBtn}</span>
+                  <button
+                    type="submit"
+                    className="btn btn-none text-primary fw-light"
+                  >
+                    {book.EditBtn}
+                  </button>
                 </p>
               </div>
               <div className="w-50">
@@ -84,7 +103,11 @@ const BookDetail = () => {
                   <div>
                     <p className="text-secondary fs-6">{book.CurrentChapter}</p>
                     <p>{book.Chapter}</p>
-                    <button type="submit" className="btn btn-primary" style={{ width: "max-content" }}>
+                    <button
+                      type="submit"
+                      className="btn btn-primary"
+                      style={{ width: "max-content" }}
+                    >
                       UPDATE PROGRESS
                     </button>
                   </div>

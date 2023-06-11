@@ -54,7 +54,7 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Math Magicians] <a name="about-project"></a>
+# 📖 [Book Store] <a name="about-project"></a>
 
 **[Bookstore]** is a web-app where you can add, delete and see your favourite books.
 
@@ -94,6 +94,12 @@ After you're finished please remove all the comments and instructions!
 - **[Add a book]**
 - **[Delete a book]**
 - **[See your books]**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+# 🚀 [Live Demo] <a name="live-demo"></a>
+
+You can see the app working [here](https://bookstore-yk2v.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

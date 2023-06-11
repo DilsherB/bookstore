@@ -10,7 +10,7 @@ const Navbar = () => {
   };
   return (
     <div className="container bg-light w-100 px-3">
-      <ul className="d-flex align-items-center">
+      <ul className="d-flex align-items-center pt-2">
         <h3 className="text-primary fw-bold" style={{ width: "25%" }}>
           Bookstore CMS
         </h3>

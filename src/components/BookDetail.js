@@ -59,7 +59,7 @@ const BookDetail = () => {
           <>
             <div
               key={book.id}
-              className="d-flex bg-white p-3 my-3 border rounded justify-content-between"
+              className="d-flex bg-white p-3 my-3 border rounded justify-content-between mediaQueryMainPage"
             >
               <div className="my-3 w-50">
                 <p className="fw-bold text-secondary lh-1">{book.type}</p>
@@ -90,9 +90,9 @@ const BookDetail = () => {
                 </p>
               </div>
               <div className="w-50">
-                <div className="d-flex gap-5 h-100 align-items-center">
+                <div className="d-flex gap-5 h-100 align-items-center mediaQueryBookProgress">
                   <div className="d-flex h-100 align-items-center gap-5">
-                    <div style={{ width: "75px" }}>
+                    <div style={{ width: "75px" }} className="ps-3">
                       <CompletionCircle completePer={book.Percentage} />
                     </div>
                     <div>

@@ -5,7 +5,7 @@ const NewBookForm = () => {
     <div>
       <p className="fs-4 text-secondary">ADD NEW BOOK</p>
       <form>
-        <div className="d-flex justify-content-between">
+        <div className="d-flex justify-content-between mediaQueryNewBookForm">
           <div className="form-group col-6 flex-row">
             <input type="text" className="form-control" placeholder="Book title" />
           </div>

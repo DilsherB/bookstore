@@ -3,9 +3,7 @@ import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { PropTypes } from "prop-types";
 
-const CompletionCircle = (props) => {
-  const { completePer } = props;
-  console.log(completePer);
+const CompletionCircle = ({ completePer }) => {
   return (
     <div>
       <CircularProgressbar value={completePer} />

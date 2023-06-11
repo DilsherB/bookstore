@@ -23,3 +23,26 @@
     width: 100% !important;
   }
 }
+@media screen and (max-width: 810px) {
+  .mediaQueryMainPage {
+    display: flex;
+    flex-direction: column;
+  }
+  .mediaQueryBookProgress {
+    clear: both;
+    display: flex;
+    width: 200% !important;
+    justify-content:flex-end;
+  }
+  .vr {
+    display: none !important;
+  }
+  .mediaQueryMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .mediaQueryLogo {
+    width: 100% !important;
+  }
+}

@@ -4,8 +4,11 @@ export const categoriesSlice = createSlice({
   name: "category",
   initialState: [],
   reducers: {
-    addCategory: (state, action) => {
-      state.push(action.payload);
+    checkStatus: (state, action) => {
+      state.categories =
+        action.payload === "Under Construction"
+          ? "Under Construction"
+          : state.categories;
     },
   },
 });

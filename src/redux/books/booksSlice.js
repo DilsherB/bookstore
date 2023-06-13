@@ -4,7 +4,7 @@ export const booksSlice = createSlice({
   name: "book",
   initialState: [
     {
-      item_id: "item1",
+      item_id: 1,
       title: "The Great Gatsby",
       author: "John Smith",
       category: "Fiction",
@@ -18,7 +18,7 @@ export const booksSlice = createSlice({
       UpdateProgress: "UPDATE PROGRESS",
     },
     {
-      item_id: "item2",
+      item_id: 2,
       title: "Anna Karenina",
       author: "Leo Tolstoy",
       category: "Fiction",
@@ -32,7 +32,7 @@ export const booksSlice = createSlice({
       UpdateProgress: "UPDATE PROGRESS",
     },
     {
-      item_id: "item3",
+      item_id: 3,
       title: "The Selfish Gene",
       author: "Richard Dawkins",
       category: "Nonfiction",

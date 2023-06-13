@@ -6,10 +6,7 @@ import CompletionCircle from "./CompletionCircle";
 const BookDetail = () => {
   const books = useSelector((state) => state.books);
   const dispatch = useDispatch();
-  // const [books, setBooks] = useState(booksDB);
   const handleDeleteBook = ({ id }) => {
-    // const { id } = e.target.dataset.id;
-    console.log(id);
     dispatch(remveBook(id));
   };
   return (

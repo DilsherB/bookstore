@@ -6,7 +6,7 @@ import CompletionCircle from "./CompletionCircle";
 const BookDetail = () => {
   const books = useSelector((state) => state.books);
   const dispatch = useDispatch();
-  const handleDeleteBook = ({ id }) => {
+  const handleDeleteBook = (id) => {
     dispatch(remveBook(id));
   };
   return (

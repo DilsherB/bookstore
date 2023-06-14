@@ -13,16 +13,21 @@ const NewBookForm = () => {
     const itemId = books.length + 1;
     const Percentage = 0;
     const Chapter = "still to start";
-    dispatch(
-      addBook({
-        title,
-        author,
-        category,
-        itemId,
-        Percentage,
-        Chapter,
-      })
-    );
+    if (!title || !author || !category) alert("Please fill all fields");
+    else {
+      dispatch(
+        addBook({
+          id: itemId,
+          title,
+          author,
+          category,
+          Percentage,
+          Chapter,
+        })
+      );
+    }
+    e.target[0].value = "";
+    e.target[1].value = "";
   };
   return (
     <div>

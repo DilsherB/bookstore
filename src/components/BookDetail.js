@@ -27,7 +27,7 @@ const BookDetail = () => {
                     type="submit"
                     className="btn btn-none text-primary fw-light"
                   >
-                    {book.CommentsBtn}
+                    Comments
                   </button>
                   <div className="vr" />
                   <button
@@ -36,14 +36,14 @@ const BookDetail = () => {
                     className="btn btn-none text-primary fw-light"
                     onClick={() => handleDeleteBook(book.item_id)}
                   >
-                    {book.RemoveBtn}
+                    Remove
                   </button>
                   <div className="vr" />
                   <button
                     type="submit"
                     className="btn btn-none text-primary fw-light"
                   >
-                    {book.EditBtn}
+                    Edit
                   </button>
                 </div>
               </div>
@@ -57,13 +57,13 @@ const BookDetail = () => {
                       <p>
                         {book.Percentage}%
                         <br />
-                        {book.Complete}
+                        Complete
                       </p>
                     </div>
                   </div>
                   <div className="vr" />
                   <div>
-                    <p className="text-secondary fs-6">{book.CurrentChapter}</p>
+                    <p className="text-secondary fs-6">CURRENT CHAPTER</p>
                     <p>{book.Chapter}</p>
                     <button
                       type="submit"

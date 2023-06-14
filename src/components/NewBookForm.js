@@ -5,8 +5,8 @@ const NewBookForm = () => {
     <div>
       <p className="fs-4 text-secondary">ADD NEW BOOK</p>
       <form>
-        <div className="d-flex justify-content-between mediaQueryNewBookForm">
-          <div className="form-group col-6 flex-row">
+        <div className="d-flex justify-content-between mediaQueryNewBookForm pb-5">
+          <div className="form-group col-3 flex-row">
             <input
               type="text"
               className="form-control"
@@ -14,18 +14,29 @@ const NewBookForm = () => {
             />
           </div>
           <div className="form-group col-3 flex-row">
+            <input type="text" className="form-control" placeholder="Author" />
+          </div>
+          <div className="form-group col-3 flex-row">
             <select
               name="category"
               id="category"
               className="form-select form-control"
             >
-              <option value="Action">Action</option>
-              <option value="Science Fiction">Science Fiction</option>
-              <option value="Economy">Economy</option>
+              <optgroup label="Category">
+                <option value="Action">Action</option>
+                <option value="Science Fiction">Science Fiction</option>
+                <option value="Economy">Economy</option>
+              </optgroup>
             </select>
           </div>
-          <div className="form-group col-2 col-sm-3">
-            <p className="btn btn-primary form-control">ADD BOOK</p>
+          <div className="form-group">
+            <button
+              type="submit"
+              className="btn btn-primary form-control"
+              style={{ minWidth: "max-content" }}
+            >
+              ADD BOOK
+            </button>
           </div>
         </div>
       </form>

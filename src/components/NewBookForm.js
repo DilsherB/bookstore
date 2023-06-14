@@ -15,14 +15,16 @@ const NewBookForm = () => {
     const Chapter = "still to start";
     dispatch(
       addBook({
+        id: itemId,
         title,
         author,
         category,
-        itemId,
         Percentage,
         Chapter,
       })
     );
+    e.target[0].value = "";
+    e.target[1].value = "";
   };
   return (
     <div>

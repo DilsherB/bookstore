@@ -24,8 +24,14 @@ const NewBookForm = () => {
               <option value="Economy">Economy</option>
             </select>
           </div>
-          <div className="form-group col-2 col-sm-3">
-            <p className="btn btn-primary form-control">ADD BOOK</p>
+          <div className="form-group col-2 col-sm-3 d-flex justify-content-end">
+            <button
+              type="submit"
+              className="btn btn-primary form-control"
+              style={{ width: "max-content" }}
+            >
+              ADD BOOK
+            </button>
           </div>
         </div>
       </form>

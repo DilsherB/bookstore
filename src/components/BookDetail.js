@@ -24,7 +24,7 @@ const BookDetail = () => {
                 <p className="text-primary lh-1 fw-light">{book.author}</p>
                 <div className="d-flex gap-3 pt-3">
                   <button
-                    type="submit"
+                    type="button"
                     className="btn btn-none text-primary fw-light"
                   >
                     Comments
@@ -40,7 +40,7 @@ const BookDetail = () => {
                   </button>
                   <div className="vr" />
                   <button
-                    type="submit"
+                    type="button"
                     className="btn btn-none text-primary fw-light"
                   >
                     Edit
@@ -66,7 +66,7 @@ const BookDetail = () => {
                     <p className="text-secondary fs-6">CURRENT CHAPTER</p>
                     <p>{book.Chapter}</p>
                     <button
-                      type="submit"
+                      type="button"
                       className="btn btn-primary"
                       style={{ width: "max-content" }}
                     >

@@ -1,33 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addBook } from "../redux/books/booksSlice";
 
 const NewBookForm = () => {
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
+  // const [category, setCategory] = useState("");
+
+  const titleHandler = (e) => {
+    setTitle(e.target.value);
+  };
+  const authorHandler = (e) => {
+    setAuthor(e.target.value);
+  };
+
   const dispatch = useDispatch();
   const books = useSelector((state) => state.books);
+
   const handleAddBook = (e) => {
     e.preventDefault();
-    const title = e.target[0].value;
-    const author = e.target[1].value;
     const category = e.target[2].value;
-    const itemId = books.length + 1;
-    const Percentage = 0;
-    const Chapter = "still to start";
-    if (!title || !author || !category) alert("Please fill all fields");
-    else {
+    if (!title.trim() || !author.trim() || !category.trim()) {
+      alert("Please fill all fields");
+    } else {
       dispatch(
         addBook({
-          id: itemId,
+          item_id: books.length + 1,
           title,
           author,
           category,
-          Percentage,
-          Chapter,
+          Percentage: 0,
+          Chapter: "still to start",
         })
       );
     }
-    e.target[0].value = "";
-    e.target[1].value = "";
+    setTitle("");
+    setAuthor("");
   };
   return (
     <div>
@@ -39,10 +47,18 @@ const NewBookForm = () => {
               type="text"
               className="form-control"
               placeholder="Book title"
+              value={title}
+              onChange={titleHandler}
             />
           </div>
           <div className="form-group col-3 flex-row">
-            <input type="text" className="form-control" placeholder="Author" />
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Author"
+              value={author}
+              onChange={authorHandler}
+            />
           </div>
           <div className="form-group col-3 flex-row">
             <select
@@ -51,7 +67,9 @@ const NewBookForm = () => {
               className="form-select form-control"
             >
               <optgroup label="Category">
-                <option value="Action">Action</option>
+                <option value="Action" selected>
+                  Action
+                </option>
                 <option value="Science Fiction">Science Fiction</option>
                 <option value="Economy">Economy</option>
               </optgroup>

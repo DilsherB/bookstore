@@ -6,7 +6,6 @@ const API_URL = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/book
 
 export const getBooks = createAsyncThunk("books/getBooks", async () => {
   const response = await axios.get(API_URL);
-  console.log(response.data);
   return response.data;
 });
 
@@ -17,7 +16,6 @@ export const postBook = createAsyncThunk("books/postBook", async (book) => {
     category: book.category,
     author: book.author,
   });
-  console.log(book);
   return book;
 });
 
@@ -25,7 +23,6 @@ export const deleteBook = createAsyncThunk(
   "books/deleteBook",
   async (bookId) => {
     await axios.delete(`${API_URL}/${bookId}`);
-    console.log(bookId);
     return bookId;
   }
 );
@@ -37,6 +34,5 @@ export const updateBook = createAsyncThunk("books/updateBook", async (book) => {
     category: book.category,
     author: book.author,
   });
-  console.log(book);
   return book;
 });

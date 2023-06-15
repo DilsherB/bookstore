@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addBook } from "../redux/books/booksSlice";
+import { postBook } from "../redux/books/booksAPI";
 
 const NewBookForm = () => {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
-  // const [category, setCategory] = useState("");
 
   const titleHandler = (e) => {
     setTitle(e.target.value);
@@ -23,16 +23,15 @@ const NewBookForm = () => {
     if (!title.trim() || !author.trim() || !category.trim()) {
       alert("Please fill all fields");
     } else {
-      dispatch(
-        addBook({
-          item_id: books.length + 1,
-          title,
-          author,
-          category,
-          Percentage: 0,
-          Chapter: "still to start",
-        })
-      );
+      const newBook = {
+        item_id: books.length + 1,
+        title,
+        category,
+        author,
+        Percentage: 0,
+      };
+      dispatch(addBook(newBook));
+      dispatch(postBook(newBook));
     }
     setTitle("");
     setAuthor("");
@@ -51,6 +50,7 @@ const NewBookForm = () => {
               onChange={titleHandler}
             />
           </div>
+
           <div className="form-group col-3 flex-row">
             <input
               type="text"
@@ -60,6 +60,7 @@ const NewBookForm = () => {
               onChange={authorHandler}
             />
           </div>
+
           <div className="form-group col-3 flex-row">
             <select
               name="category"
@@ -67,14 +68,13 @@ const NewBookForm = () => {
               className="form-select form-control"
             >
               <optgroup label="Category">
-                <option value="Action" selected>
-                  Action
-                </option>
+                <option value="Action">Action</option>
                 <option value="Science Fiction">Science Fiction</option>
                 <option value="Economy">Economy</option>
               </optgroup>
             </select>
           </div>
+
           <div className="form-group">
             <button
               type="submit"

@@ -1,33 +1,40 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { addBook } from "../redux/books/booksSlice";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import uuid from "react-uuid";
+
+// import { addBook } from "../redux/books/booksSlice";
+import { postBook, getBooks } from "../redux/books/booksAPI";
 
 const NewBookForm = () => {
   const dispatch = useDispatch();
-  const books = useSelector((state) => state.books);
+  useEffect(() => {
+    dispatch(getBooks());
+  }, [dispatch]);
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
+  const [category, setCategory] = useState("");
+
+  // const { booksArray } = useSelector((state) => state.books);
+
   const handleAddBook = (e) => {
     e.preventDefault();
-    const title = e.target[0].value;
-    const author = e.target[1].value;
     const category = e.target[2].value;
-    const itemId = books.length + 1;
-    const Percentage = 0;
-    const Chapter = "still to start";
-    if (!title || !author || !category) alert("Please fill all fields");
-    else {
-      dispatch(
-        addBook({
-          id: itemId,
-          title,
-          author,
-          category,
-          Percentage,
-          Chapter,
-        })
-      );
+    if (!title.trim() || !author.trim() || !category.trim()) {
+      return alert("Please fill all fields");
     }
-    e.target[0].value = "";
-    e.target[1].value = "";
+    const newBook = {
+      item_id: uuid(),
+      title,
+      category,
+      author,
+      percentage: 0,
+      chapter: "Still to start",
+    };
+    // dispatch(addBook(newBook));
+    dispatch(postBook(newBook));
+    setTitle("");
+    setAuthor("");
   };
   return (
     <div>
@@ -39,16 +46,28 @@ const NewBookForm = () => {
               type="text"
               className="form-control"
               placeholder="Book title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
             />
           </div>
+
           <div className="form-group col-3 flex-row">
-            <input type="text" className="form-control" placeholder="Author" />
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Author"
+              value={author}
+              onChange={(e) => setAuthor(e.target.value)}
+            />
           </div>
+
           <div className="form-group col-3 flex-row">
             <select
               name="category"
               id="category"
               className="form-select form-control"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
             >
               <optgroup label="Category">
                 <option value="Action">Action</option>
@@ -57,6 +76,7 @@ const NewBookForm = () => {
               </optgroup>
             </select>
           </div>
+
           <div className="form-group">
             <button
               type="submit"

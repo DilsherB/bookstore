@@ -1,42 +1,43 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { getBooks, postBook, removeBook } from "./booksAPI";
 
 export const booksSlice = createSlice({
-  name: "book",
-  initialState: [
-    {
-      item_id: 1,
-      title: "The Great Gatsby",
-      author: "John Smith",
-      category: "Fiction",
-      Percentage: 64,
-      Chapter: "Chapter 17",
-    },
-    {
-      item_id: 2,
-      title: "Anna Karenina",
-      author: "Leo Tolstoy",
-      category: "Fiction",
-      Percentage: 8,
-      Chapter: 'Chapter 3: "A Lesson Learned"',
-    },
-    {
-      item_id: 3,
-      title: "The Selfish Gene",
-      author: "Richard Dawkins",
-      category: "Nonfiction",
-      Percentage: 0,
-      Chapter: "Introduction",
-    },
-  ],
-  reducers: {
-    addBook: (state, action) => {
-      state.push(action.payload);
-    },
-    remveBook: (state, action) => {
-      return state.filter((book) => book.item_id !== action.payload);
-    },
+  name: "books",
+  initialState: {
+    booksArray: [],
+    error: { status: "pending", message: "Pending" },
+  },
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(getBooks.fulfilled, (state, action) => {
+        const result = Object.keys(action.payload).map((key) => ({
+          item_id: key,
+          title: action.payload[key][0].title,
+          category: action.payload[key][0].category,
+          author: action.payload[key][0].author,
+          percentage: 0,
+          chapter: "Still to start",
+        }));
+        state.booksArray = result;
+      })
+      .addCase(getBooks.rejected, (state, action) => {
+        state.status = "rejected";
+        state.message = `Failed to fetch books ${action.payload.data.response.message}`;
+      })
+      .addCase(postBook.fulfilled, (state, action) => {
+        state.booksArray.push(action.payload);
+      })
+      .addCase(postBook.rejected, (state, action) => {
+        state.status = "rejected";
+        state.message = `Failed to add a book ${action.payload.data.response.message}`;
+      })
+      .addCase(removeBook.fulfilled, (state, action) => {
+        state.booksArray = state.booksArray.filter(
+          (book) => book.item_id !== action.payload.item_id
+        );
+      });
   },
 });
 
-export const { addBook, remveBook } = booksSlice.actions;
 export default booksSlice.reducer;

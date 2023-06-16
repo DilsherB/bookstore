@@ -10,7 +10,10 @@ const Navbar = () => {
   };
   return (
     <ul className="container d-flex align-items-center mt-2 bg-white rounded border mediaQueryMenu">
-      <h3 className="text-primary fw-bold mediaQueryLogo" style={{ width: "25%" }}>
+      <h3
+        className="text-primary fw-bold mediaQueryLogo"
+        style={{ width: "35%" }}
+      >
         Bookstore CMS
       </h3>
       <div

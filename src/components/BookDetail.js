@@ -9,6 +9,8 @@ const BookDetail = () => {
   const handleDeleteBook = (id) => {
     dispatch(removeBook(id));
   };
+  const bookCompPer = Math.floor(Math.random() * 101);
+  const totalChapters = Math.floor(Math.random() * 31);
   return (
     <div>
       {books.map((book) => {
@@ -51,11 +53,11 @@ const BookDetail = () => {
               <div className="d-flex gap-5 h-100 align-items-center mediaQueryBookProgress">
                 <div className="d-flex h-100 align-items-center gap-5">
                   <div style={{ width: "75px" }} className="ps-3">
-                    <CompletionCircle completePer={book.percentage} />
+                    <CompletionCircle completePer={bookCompPer} />
                   </div>
                   <div>
                     <p>
-                      {book.percentage}%
+                      {bookCompPer}%
                       <br />
                       Complete
                     </p>
@@ -64,7 +66,10 @@ const BookDetail = () => {
                 <div className="vr" />
                 <div>
                   <p className="text-secondary fs-6">CURRENT CHAPTER</p>
-                  <p>{book.chapter}</p>
+                  <p>
+                    Chapter #: {Math.ceil((totalChapters * bookCompPer) / 100)} off{" "}
+                    {totalChapters}
+                  </p>
                   <button
                     type="button"
                     className="btn btn-primary"

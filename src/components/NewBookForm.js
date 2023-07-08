@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import uuid from "react-uuid";
 
-// import { addBook } from "../redux/books/booksSlice";
 import { postBook, getBooks } from "../redux/books/booksAPI";
 
 const NewBookForm = () => {
@@ -14,8 +12,6 @@ const NewBookForm = () => {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [category, setCategory] = useState("");
-
-  // const { booksArray } = useSelector((state) => state.books);
 
   const handleAddBook = (e) => {
     e.preventDefault();
@@ -28,10 +24,7 @@ const NewBookForm = () => {
       title,
       category,
       author,
-      percentage: 0,
-      chapter: "Still to start",
     };
-    // dispatch(addBook(newBook));
     dispatch(postBook(newBook));
     setTitle("");
     setAuthor("");

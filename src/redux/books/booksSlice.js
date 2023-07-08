@@ -16,8 +16,6 @@ export const booksSlice = createSlice({
           title: action.payload[key][0].title,
           category: action.payload[key][0].category,
           author: action.payload[key][0].author,
-          percentage: 0,
-          chapter: "Still to start",
         }));
         state.booksArray = result;
       })
